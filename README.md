@@ -5,3 +5,5 @@ The most common move will be selected and Chesster will tweet his own move till 
 
 Chesster is running on a RaspberryPi using Node.js.
 Chesster supports different stages of AI. The AI using the minimax algorithm with different parameters.
+
+Twitter: https://twitter.com/chessterbot
