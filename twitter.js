@@ -6,9 +6,6 @@ var config = require("./config");
 
 var T = new Twit(config)
 
-//getLastTweetId();
-//getRetweets("1031995168830959624");
-
 module.exports = {
 	getMove: function () {
 		getLastTweetId();
