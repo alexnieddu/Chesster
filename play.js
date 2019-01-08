@@ -1,3 +1,5 @@
+// Starts Chesster
+
 console.log("Chesster the chess bot");
 
 var bot = require("./bot");
