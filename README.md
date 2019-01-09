@@ -4,6 +4,6 @@ At the first round followers are able to tweet a move to Chesster.
 The most common move will be selected and Chesster will tweet his own move till the game ends.
 
 Chesster is running on a RaspberryPi using Node.js.
-Chesster supports different stages of AI. The AI using the minimax algorithm with different parameters.
+Chesster supports different stages of AI. The AI using the minimax algorithm.
 
 Twitter: https://twitter.com/chessterbot

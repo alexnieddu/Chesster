@@ -1,3 +1,4 @@
+// 
 // Starts Chesster
 
 console.log("Chesster the chess bot");
