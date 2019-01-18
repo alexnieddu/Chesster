@@ -1,7 +1,13 @@
+// Library to get the most retweeted move from the community
+//
+// ------------------------------------------------------------
+// SETUP AND INIT
+
 console.log("Twitter Bot starts.");
 
 var Twit = require('twit')
 var fs = require("fs");
+// In the config file are your personal data for twitter API
 var config = require("./config");
 
 var T = new Twit(config)
@@ -12,6 +18,11 @@ module.exports = {
 	}
 };
 
+//
+// ------------------------------------------------------------
+// MAIN METHODS
+
+// Gets the last tweet by internal ID
 function getLastTweetId() {
   var param = { screen_name: "chessterbot", count: 1};
   T.get("statuses/user_timeline", param, gotIt);
@@ -25,6 +36,7 @@ function getLastTweetId() {
       // console.log(id + "\nGOT IT!");
       console.log(id);
 
+	  // Here we got the actual moves retweeted by the community
       getRetweets(id);
     }
   }
@@ -48,6 +60,7 @@ function getRetweets(tweetId) {
       }
       
       if(arr_comments.length != 0) {
+        // Counts the retweeted move in json format
 		var counts = countArr(filterArr(arr_comments)); // Array
 		console.log(counts);
 		var max_counts = Math.max.apply(Math, counts.map(function(o) { return o.count; }));
@@ -61,6 +74,10 @@ function getRetweets(tweetId) {
     }
   }
 }
+
+//
+// ------------------------------------------------------------
+// SUPPORTING METHODS
 
 function indexOfMax(arr) {
     if (arr.length === 0) {
