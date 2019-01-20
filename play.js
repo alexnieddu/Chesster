@@ -3,6 +3,10 @@
 
 console.log("Chesster the chess bot");
 
+
+// -------------------------------------------------------------
+// SETUP AND INIT
+
 var bot = require("./bot");
 
 var Twit = require("twit");
@@ -13,6 +17,10 @@ var config = require("./config");
 
 var T = new Twit(config)
 
+
+// -------------------------------------------------------------
+// BOT STARTS
+// by setInterval for every 15 mins
 
 play();
 setInterval(play, 1000*60*15); // 1/4 hr
@@ -90,7 +98,10 @@ function play() {
 	}
 }
 
-// 
+// -------------------------------------------------------------
+// AI ALGORITHM - minimax method
+
+
 var minimaxRoot = function(depth, game, isMaximisingPlayer) {
 
     var newGameMoves = game.ugly_moves();
@@ -266,7 +277,9 @@ var getPieceValue = function (piece, x, y) {
 };
 
 
+// -------------------------------------------------------------
 // Post a tweet
+
 function post(msg) {
 	T.post('statuses/update', { status: msg }, function (err, data, response) {
 			if(err) {
